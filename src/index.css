@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  /* Brand */
+  --color-brand: #7C5CFC;
+  --color-violet-soft: #A78BFA;
+  --color-info: #60A5FA;
+  --color-amber: #F5C451;
+
+  /* Status */
+  --color-done: #34D399;
+  --color-pending: #F5C451;
+  --color-overdue: #F87171;
+  --color-upcoming: #60A5FA;
+}
+
+:root {
+  --bg: #F7F7FB;
+  --sidebar: #F0EEFA;
+  --navbar: #FFFFFF;
+  --card: #FFFFFF;
+  --surface: #F5F3FC;
+  --border: #E5E4ED;
+  --text: #20202B;
+  --text-2: #777786;
+  --text-muted: #9A9AA8;
+  --btn: #6D4AFF;
+  --btn-hover: #5B3CE0;
+  --nav-active-bg: #EAE4FF;
+  --nav-active-text: #6D4AFF;
+  --ring-track: #E5E4ED;
+}
+
+.dark {
+  --bg: #0D0E12;
+  --sidebar: #15171E;
+  --navbar: #15171E;
+  --card: #1C1F29;
+  --surface: #222530;
+  --border: #292D39;
+  --text: #F3F4F6;
+  --text-2: #9CA3AF;
+  --text-muted: #6B7280;
+  --btn: #7C5CFC;
+  --btn-hover: #6D4AFF;
+  --nav-active-bg: #29223F;
+  --nav-active-text: #A78BFA;
+  --ring-track: #30333D;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-sidebar: var(--sidebar);
+  --color-navbar: var(--navbar);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-line: var(--border);
+  --color-ink: var(--text);
+  --color-ink-2: var(--text-2);
+  --color-ink-muted: var(--text-muted);
+  --color-btn: var(--btn);
+  --color-btn-hover: var(--btn-hover);
+  --color-nav-active: var(--nav-active-bg);
+  --color-nav-active-text: var(--nav-active-text);
+  --color-ring-track: var(--ring-track);
+}
+
+body {
+  @apply bg-bg text-ink font-sans;
+}
