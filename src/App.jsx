@@ -1,20 +1,27 @@
-import Sidebar from './components/layout/Sidebar'
-import Navbar from './components/layout/Navbar'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/layout/Layout'
 import Dashboard from './pages/Dashboard'
-import useTheme from './hooks/useTheme'
+import Category from './pages/Category'
+import Subcategory from './pages/Subcategory'
+import TodaysTasksPage from './pages/TodaysTasksPage'
+import Calendar from './pages/Calendar'
+import Analytics from './pages/Analytics'
+import Settings from './pages/Settings'
+import NotFound from './pages/NotFound'
 
 export default function App() {
-  const { theme, toggle } = useTheme()
-
   return (
-    <div className="bg-bg flex h-screen">
-      <Sidebar />
-      <div className="flex flex-1 flex-col overflow-hidden">
-        <Navbar theme={theme} onToggleTheme={toggle} />
-        <main className="flex-1 overflow-y-auto p-6">
-          <Dashboard />
-        </main>
-      </div>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/category/:categoryName" element={<Category />} />
+        <Route path="/category/:categoryName/:subName" element={<Subcategory />} />
+        <Route path="/today" element={<TodaysTasksPage />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }

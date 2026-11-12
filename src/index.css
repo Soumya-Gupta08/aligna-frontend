@@ -1,56 +1,56 @@
-@import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", sans-serif;
+  --font-sans: 'Inter', sans-serif;
 
   /* Brand */
-  --color-brand: #7C5CFC;
-  --color-violet-soft: #A78BFA;
-  --color-info: #60A5FA;
-  --color-amber: #F5C451;
+  --color-brand: #7c5cfc;
+  --color-violet-soft: #a78bfa;
+  --color-info: #60a5fa;
+  --color-amber: #f5c451;
 
   /* Status */
-  --color-done: #34D399;
-  --color-pending: #F5C451;
-  --color-overdue: #F87171;
-  --color-upcoming: #60A5FA;
+  --color-done: #34d399;
+  --color-pending: #f5c451;
+  --color-overdue: #f87171;
+  --color-upcoming: #60a5fa;
 }
 
 :root {
-  --bg: #F7F7FB;
-  --sidebar: #F0EEFA;
-  --navbar: #FFFFFF;
-  --card: #FFFFFF;
-  --surface: #F5F3FC;
-  --border: #E5E4ED;
-  --text: #20202B;
+  --bg: #f7f7fb;
+  --sidebar: #f0eefa;
+  --navbar: #ffffff;
+  --card: #ffffff;
+  --surface: #f5f3fc;
+  --border: #e5e4ed;
+  --text: #20202b;
   --text-2: #777786;
-  --text-muted: #9A9AA8;
-  --btn: #6D4AFF;
-  --btn-hover: #5B3CE0;
-  --nav-active-bg: #EAE4FF;
-  --nav-active-text: #6D4AFF;
-  --ring-track: #E5E4ED;
+  --text-muted: #9a9aa8;
+  --btn: #6d4aff;
+  --btn-hover: #5b3ce0;
+  --nav-active-bg: #eae4ff;
+  --nav-active-text: #6d4aff;
+  --ring-track: #e5e4ed;
 }
 
 .dark {
-  --bg: #0D0E12;
-  --sidebar: #15171E;
-  --navbar: #15171E;
-  --card: #1C1F29;
+  --bg: #0d0e12;
+  --sidebar: #15171e;
+  --navbar: #15171e;
+  --card: #1c1f29;
   --surface: #222530;
-  --border: #292D39;
-  --text: #F3F4F6;
-  --text-2: #9CA3AF;
-  --text-muted: #6B7280;
-  --btn: #7C5CFC;
-  --btn-hover: #6D4AFF;
-  --nav-active-bg: #29223F;
-  --nav-active-text: #A78BFA;
-  --ring-track: #30333D;
+  --border: #292d39;
+  --text: #f3f4f6;
+  --text-2: #9ca3af;
+  --text-muted: #6b7280;
+  --btn: #7c5cfc;
+  --btn-hover: #6d4aff;
+  --nav-active-bg: #29223f;
+  --nav-active-text: #a78bfa;
+  --ring-track: #30333d;
 }
 
 @theme inline {
@@ -72,4 +72,15 @@
 
 body {
   @apply bg-bg text-ink font-sans;
+}
+
+.dark select,
+.dark input[type='date'],
+.dark input[type='time'] {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: var(--card);
+  color: var(--text);
 }
